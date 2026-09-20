@@ -19,6 +19,20 @@
 .modal{position:fixed;inset:0;background:#171229aa;display:none;align-items:center;justify-content:center;padding:18px;z-index:50}.panel{background:#fff;border-radius:24px;width:min(520px,100%);padding:25px;position:relative}.close{position:absolute;left:16px;top:14px;border:0;background:#f1eff5;width:36px;height:36px;border-radius:50%;font-size:20px}.panel h2{margin-top:5px}.panel p{color:var(--muted);line-height:1.6}.bigCode{background:#f7f5ff;border:2px dashed #b9b0df;border-radius:15px;padding:18px;text-align:center;font-size:28px;font-weight:950;letter-spacing:.08em;margin:20px 0}.full{width:100%;border:0;background:var(--p);color:#fff;border-radius:12px;padding:13px;font-weight:900}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 17px;border-radius:12px;display:none;z-index:100;box-shadow:0 15px 35px #0003}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.stores{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:620px){.links{display:none}.nav{padding:0 18px}.navBtn{padding:9px 12px}.hero{padding:48px 18px}.stats{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.stores{grid-template-columns:repeat(2,1fr)}.section{padding:45px 0}.wrap{padding:0 18px}.banner{display:block}.banner button{margin-top:16px}.head{display:block}.filters{margin-top:15px}}
+
+/* KODI 3D layer */
+body{overflow-x:hidden}.hero{position:relative;overflow:hidden;isolation:isolate}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(8px);pointer-events:none;z-index:-1}.hero:before{width:380px;height:380px;background:#7c5cff55;top:-170px;right:-100px}.hero:after{width:300px;height:300px;background:#00d4ff33;bottom:-170px;left:-90px}
+.hero3d{max-width:1050px;margin:38px auto 0;height:230px;position:relative;perspective:1100px;display:flex;align-items:center;justify-content:center}
+.cubeGlow{position:absolute;width:260px;height:110px;border-radius:50%;background:#7c5cff55;filter:blur(28px);bottom:10px}
+.coupon3d{width:min(560px,88vw);height:185px;position:relative;transform-style:preserve-3d;transition:transform .12s ease-out;will-change:transform;cursor:pointer}
+.coupon3d .face{position:absolute;inset:0;border:1px solid #ffffff38;border-radius:26px;background:linear-gradient(135deg,#ffffff20,#ffffff08);backdrop-filter:blur(16px);box-shadow:0 30px 70px #0007,inset 0 1px #fff3;overflow:hidden}
+.coupon3d .face:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#ffffff12;right:-100px;top:-110px}.coupon3d .face:after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;border:1px solid #ffffff1c;left:-75px;bottom:-95px}
+.ticket{height:100%;display:grid;grid-template-columns:1fr 155px;align-items:center;padding:25px;position:relative;z-index:2}
+.ticketMain{text-align:right}.ticketKicker{font-size:11px;letter-spacing:.14em;color:#cfc6ff;font-weight:900}.ticketMain h3{font-size:34px;margin:8px 0 4px}.ticketMain p{margin:0;color:#ddd8ec;font-size:13px}.ticketCode{height:100%;border-right:1px dashed #ffffff55;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}.ticketCode b{font-size:24px;letter-spacing:.08em}.ticketCode span{font-size:10px;color:#cfc6ff}.shine{position:absolute;inset:-100px;transform:translateX(-130%) rotate(18deg);background:linear-gradient(90deg,transparent,#fff3,transparent);transition:transform .7s;pointer-events:none}.coupon3d:hover .shine{transform:translateX(130%) rotate(18deg)}
+.floatBadge{position:absolute;background:#fff;color:#211a39;border-radius:14px;padding:9px 12px;font-size:11px;font-weight:950;box-shadow:0 15px 35px #0005;transform:translateZ(55px)}.badge1{top:0;right:4%}.badge2{bottom:0;left:4%;transform:translateZ(40px)}
+@media(max-width:620px){.hero3d{height:205px;margin-top:25px}.coupon3d{height:160px}.ticket{grid-template-columns:1fr 105px;padding:18px}.ticketMain h3{font-size:27px}.ticketCode b{font-size:18px}.floatBadge{font-size:9px;padding:7px 9px}.badge1{right:0}.badge2{left:0}}
+/* 3D cards */
+.coupon{transform-style:preserve-3d;perspective:900px}.coupon:hover{transform:translateY(-8px) rotateX(2deg) rotateY(-2deg)}.coupon .logo{transform:translateZ(12px)}.coupon .deal{transform:translateZ(10px)}
 </style>
 </head>
 <body>
@@ -35,6 +49,17 @@
   <p>ابحث عن متجر، شاهد العروض، انسخ الكود، وانتقل للمتجر مباشرة. واجهة بسيطة وسريعة للعثور على الخصومات.</p>
   <div class="search"><input id="search" placeholder="ابحث عن متجر أو كود أو نوع خصم..."><button onclick="doSearch()">بحث</button></div>
   <div class="quick"><button onclick="quickSearch('Nike')">Nike</button><button onclick="quickSearch('Amazon')">Amazon</button><button onclick="quickSearch('Noon')">Noon</button><button onclick="quickSearch('Booking')">Booking</button></div>
+  <div class="hero3d" id="hero3d" aria-label="بطاقة كوبون ثلاثية الأبعاد">
+   <div class="cubeGlow"></div>
+   <div class="floatBadge badge1">✦ خصم حصري</div>
+   <div class="floatBadge badge2">↗ انسخ الكود</div>
+   <div class="coupon3d" id="coupon3d" onclick="openCoupon(1)">
+    <div class="face"><div class="shine"></div><div class="ticket">
+      <div class="ticketMain"><div class="ticketKicker">KODI • 3D COUPON</div><h3>خصم 25% على Nike</h3><p>اضغط على البطاقة لعرض الكود ونسخه</p></div>
+      <div class="ticketCode"><span>الكود</span><b>NIKE25</b><span>DEMO</span></div>
+    </div></div>
+   </div>
+  </div>
  </div>
 </header>
 
@@ -88,6 +113,13 @@ async function copyCurrent(){if(!current)return;try{await navigator.clipboard.wr
 function closeModal(){document.getElementById('modal').style.display='none'}
 function show(t){const e=document.getElementById('toast');e.textContent=t;e.style.display='block';clearTimeout(window.x);window.x=setTimeout(()=>e.style.display='none',2400)}
 render();
+/* 3D pointer + touch interaction */
+const card3d=document.getElementById('coupon3d');
+const stage=document.getElementById('hero3d');
+function tilt(x,y){const r=stage.getBoundingClientRect();const px=(x-r.left)/r.width-.5,py=(y-r.top)/r.height-.5;card3d.style.transform=`rotateX(${-py*14}deg) rotateY(${px*18}deg) translateZ(18px)`;}
+stage.addEventListener('pointermove',e=>tilt(e.clientX,e.clientY));
+stage.addEventListener('pointerleave',()=>card3d.style.transform='rotateX(0) rotateY(0) translateZ(0)');
+stage.addEventListener('pointerdown',e=>tilt(e.clientX,e.clientY));
 </script>
 </body>
 </html>
