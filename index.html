@@ -1,125 +1,42 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>KODI — أكواد الخصم والعروض</title>
-<meta name="description" content="منصة لعرض أكواد الخصم والعروض مع البحث والنسخ ومعلومات المتجر.">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VEOX Studio — محرر فيديو AI</title>
 <style>
-:root{--p:#6c4df6;--p2:#8a72ff;--bg:#f7f7fb;--ink:#17151d;--muted:#77727f;--card:#fff;--line:#e9e6ef;--green:#16a05d;--red:#e34b4b;--gold:#f4b740;--shadow:0 15px 45px rgba(28,22,55,.08)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,Arial,sans-serif}button,input,select{font:inherit}button{cursor:pointer}
-.nav{height:72px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5%;position:sticky;top:0;z-index:20}.brand{display:flex;align-items:center;gap:9px;font-size:24px;font-weight:950}.mark{width:35px;height:35px;border-radius:11px;background:var(--p);color:#fff;display:grid;place-items:center}.links{display:flex;gap:24px;font-size:14px;font-weight:700}.links a{text-decoration:none;color:var(--ink)}.links a:hover{color:var(--p)}.navBtn{border:0;background:var(--p);color:#fff;border-radius:11px;padding:11px 16px;font-weight:800}
-.hero{background:linear-gradient(135deg,#171229,#35226d);color:#fff;padding:70px 5% 58px}.heroInner{max-width:1150px;margin:auto;text-align:center}.eyebrow{color:#c9bfff;font-size:12px;font-weight:900;letter-spacing:.08em}.hero h1{font-size:clamp(38px,6vw,68px);line-height:1.05;margin:12px 0}.hero h1 span{color:#a99aff}.hero p{color:#ddd8ec;max-width:650px;margin:0 auto 24px;line-height:1.7}.search{max-width:760px;margin:auto;display:flex;background:#fff;border-radius:16px;padding:6px;box-shadow:0 15px 45px #0003}.search input{flex:1;min-width:0;border:0;outline:0;padding:14px 16px;color:var(--ink);background:transparent}.search button{border:0;background:var(--p);color:#fff;border-radius:11px;padding:12px 22px;font-weight:900}.quick{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:16px}.quick button{border:1px solid #ffffff2b;background:#ffffff12;color:#fff;padding:8px 12px;border-radius:99px}
-.wrap{max-width:1150px;margin:auto;padding:0 5%}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:-26px;position:relative}.stat{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px;text-align:center;box-shadow:var(--shadow)}.stat b{font-size:24px;display:block}.stat span{color:var(--muted);font-size:12px}
-.section{padding:58px 0}.head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.head h2{margin:0;font-size:30px}.head p{margin:5px 0 0;color:var(--muted)}.filters{display:flex;gap:8px;flex-wrap:wrap}.filter{border:1px solid var(--line);background:#fff;padding:9px 14px;border-radius:999px;font-weight:750}.filter.active,.filter:hover{background:var(--p);border-color:var(--p);color:#fff}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.coupon{background:#fff;border:1px solid var(--line);border-radius:20px;padding:18px;box-shadow:0 7px 25px #1c163708;transition:.18s}.coupon:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.top{display:flex;align-items:center;justify-content:space-between;gap:12px}.store{display:flex;align-items:center;gap:11px}.logo{width:48px;height:48px;border-radius:14px;background:#f2efff;display:grid;place-items:center;font-weight:950;color:var(--p);font-size:17px}.store b{display:block}.store small{color:var(--muted)}.verified{font-size:11px;color:var(--green);font-weight:900}.deal{font-size:24px;font-weight:950;margin:18px 0 6px}.desc{color:var(--muted);font-size:13px;line-height:1.55;min-height:40px}.codeBox{display:flex;gap:8px;margin-top:17px}.code{flex:1;border:1px dashed #bcb4d7;background:#faf9ff;border-radius:11px;padding:10px;text-align:center;font-weight:950;letter-spacing:.06em}.copy{border:0;background:var(--p);color:#fff;border-radius:11px;padding:0 15px;font-weight:850}.meta{display:flex;justify-content:space-between;color:var(--muted);font-size:11px;margin-top:12px}
-.stores{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.storeCard{background:#fff;border:1px solid var(--line);border-radius:17px;padding:17px;text-align:center;cursor:pointer}.storeCard:hover{border-color:var(--p)}.storeLogo{width:52px;height:52px;margin:auto auto 9px;border-radius:15px;background:#f1effb;display:grid;place-items:center;font-weight:950;color:var(--p)}
-.banner{background:#fff;border:1px solid var(--line);border-radius:24px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:20px}.banner h2{margin:0 0 7px}.banner p{color:var(--muted);margin:0}.banner button{border:0;background:var(--ink);color:#fff;padding:13px 18px;border-radius:12px;font-weight:850}
-.footer{background:#fff;border-top:1px solid var(--line);padding:35px 5%;text-align:center;color:var(--muted)}
-.modal{position:fixed;inset:0;background:#171229aa;display:none;align-items:center;justify-content:center;padding:18px;z-index:50}.panel{background:#fff;border-radius:24px;width:min(520px,100%);padding:25px;position:relative}.close{position:absolute;left:16px;top:14px;border:0;background:#f1eff5;width:36px;height:36px;border-radius:50%;font-size:20px}.panel h2{margin-top:5px}.panel p{color:var(--muted);line-height:1.6}.bigCode{background:#f7f5ff;border:2px dashed #b9b0df;border-radius:15px;padding:18px;text-align:center;font-size:28px;font-weight:950;letter-spacing:.08em;margin:20px 0}.full{width:100%;border:0;background:var(--p);color:#fff;border-radius:12px;padding:13px;font-weight:900}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 17px;border-radius:12px;display:none;z-index:100;box-shadow:0 15px 35px #0003}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.stores{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:620px){.links{display:none}.nav{padding:0 18px}.navBtn{padding:9px 12px}.hero{padding:48px 18px}.stats{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.stores{grid-template-columns:repeat(2,1fr)}.section{padding:45px 0}.wrap{padding:0 18px}.banner{display:block}.banner button{margin-top:16px}.head{display:block}.filters{margin-top:15px}}
-
-/* KODI 3D layer */
-body{overflow-x:hidden}.hero{position:relative;overflow:hidden;isolation:isolate}.hero:before,.hero:after{content:"";position:absolute;border-radius:50%;filter:blur(8px);pointer-events:none;z-index:-1}.hero:before{width:380px;height:380px;background:#7c5cff55;top:-170px;right:-100px}.hero:after{width:300px;height:300px;background:#00d4ff33;bottom:-170px;left:-90px}
-.hero3d{max-width:1050px;margin:38px auto 0;height:230px;position:relative;perspective:1100px;display:flex;align-items:center;justify-content:center}
-.cubeGlow{position:absolute;width:260px;height:110px;border-radius:50%;background:#7c5cff55;filter:blur(28px);bottom:10px}
-.coupon3d{width:min(560px,88vw);height:185px;position:relative;transform-style:preserve-3d;transition:transform .12s ease-out;will-change:transform;cursor:pointer}
-.coupon3d .face{position:absolute;inset:0;border:1px solid #ffffff38;border-radius:26px;background:linear-gradient(135deg,#ffffff20,#ffffff08);backdrop-filter:blur(16px);box-shadow:0 30px 70px #0007,inset 0 1px #fff3;overflow:hidden}
-.coupon3d .face:before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:#ffffff12;right:-100px;top:-110px}.coupon3d .face:after{content:"";position:absolute;width:160px;height:160px;border-radius:50%;border:1px solid #ffffff1c;left:-75px;bottom:-95px}
-.ticket{height:100%;display:grid;grid-template-columns:1fr 155px;align-items:center;padding:25px;position:relative;z-index:2}
-.ticketMain{text-align:right}.ticketKicker{font-size:11px;letter-spacing:.14em;color:#cfc6ff;font-weight:900}.ticketMain h3{font-size:34px;margin:8px 0 4px}.ticketMain p{margin:0;color:#ddd8ec;font-size:13px}.ticketCode{height:100%;border-right:1px dashed #ffffff55;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px}.ticketCode b{font-size:24px;letter-spacing:.08em}.ticketCode span{font-size:10px;color:#cfc6ff}.shine{position:absolute;inset:-100px;transform:translateX(-130%) rotate(18deg);background:linear-gradient(90deg,transparent,#fff3,transparent);transition:transform .7s;pointer-events:none}.coupon3d:hover .shine{transform:translateX(130%) rotate(18deg)}
-.floatBadge{position:absolute;background:#fff;color:#211a39;border-radius:14px;padding:9px 12px;font-size:11px;font-weight:950;box-shadow:0 15px 35px #0005;transform:translateZ(55px)}.badge1{top:0;right:4%}.badge2{bottom:0;left:4%;transform:translateZ(40px)}
-@media(max-width:620px){.hero3d{height:205px;margin-top:25px}.coupon3d{height:160px}.ticket{grid-template-columns:1fr 105px;padding:18px}.ticketMain h3{font-size:27px}.ticketCode b{font-size:18px}.floatBadge{font-size:9px;padding:7px 9px}.badge1{right:0}.badge2{left:0}}
-/* 3D cards */
-.coupon{transform-style:preserve-3d;perspective:900px}.coupon:hover{transform:translateY(-8px) rotateX(2deg) rotateY(-2deg)}.coupon .logo{transform:translateZ(12px)}.coupon .deal{transform:translateZ(10px)}
-</style>
-</head>
-<body>
-<nav class="nav">
- <div class="brand"><span class="mark">%</span>KODI</div>
- <div class="links"><a href="#coupons">الأكواد</a><a href="#stores">المتاجر</a><a href="#how">كيف يعمل؟</a></div>
- <button class="navBtn" onclick="scrollToCoupons()">اكتشف الخصومات</button>
-</nav>
-
-<header class="hero">
- <div class="heroInner">
-  <div class="eyebrow">COUPONS • DEALS • SAVINGS</div>
-  <h1>كل أكواد الخصم<br><span>في مكان واحد.</span></h1>
-  <p>ابحث عن متجر، شاهد العروض، انسخ الكود، وانتقل للمتجر مباشرة. واجهة بسيطة وسريعة للعثور على الخصومات.</p>
-  <div class="search"><input id="search" placeholder="ابحث عن متجر أو كود أو نوع خصم..."><button onclick="doSearch()">بحث</button></div>
-  <div class="quick"><button onclick="quickSearch('Nike')">Nike</button><button onclick="quickSearch('Amazon')">Amazon</button><button onclick="quickSearch('Noon')">Noon</button><button onclick="quickSearch('Booking')">Booking</button></div>
-  <div class="hero3d" id="hero3d" aria-label="بطاقة كوبون ثلاثية الأبعاد">
-   <div class="cubeGlow"></div>
-   <div class="floatBadge badge1">✦ خصم حصري</div>
-   <div class="floatBadge badge2">↗ انسخ الكود</div>
-   <div class="coupon3d" id="coupon3d" onclick="openCoupon(1)">
-    <div class="face"><div class="shine"></div><div class="ticket">
-      <div class="ticketMain"><div class="ticketKicker">KODI • 3D COUPON</div><h3>خصم 25% على Nike</h3><p>اضغط على البطاقة لعرض الكود ونسخه</p></div>
-      <div class="ticketCode"><span>الكود</span><b>NIKE25</b><span>DEMO</span></div>
-    </div></div>
-   </div>
-  </div>
- </div>
-</header>
-
-<main class="wrap">
- <section class="stats"><div class="stat"><b id="count">0</b><span>كود معروض</span></div><div class="stat"><b>24/7</b><span>بحث ومقارنة</span></div><div class="stat"><b>1 نقرة</b><span>لنسخ الكود</span></div></section>
-
- <section class="section" id="coupons">
-  <div class="head"><div><h2>أحدث الأكواد</h2><p>هذه الواجهة جاهزة لعرض الأكواد التي تضيفها أو تربطها بمصدر بيانات.</p></div></div>
-  <div class="filters"><button class="filter active" onclick="filter('all',this)">الكل</button><button class="filter" onclick="filter('fashion',this)">أزياء</button><button class="filter" onclick="filter('tech',this)">تقنية</button><button class="filter" onclick="filter('travel',this)">سفر</button><button class="filter" onclick="filter('food',this)">مطاعم</button></div>
-  <div class="grid" id="grid" style="margin-top:18px"></div>
- </section>
-
- <section class="section" id="stores">
-  <div class="head"><div><h2>المتاجر</h2><p>اختر متجرًا لرؤية أكواد الخصم الخاصة به.</p></div></div>
-  <div class="stores">
-   <div class="storeCard" onclick="quickSearch('Amazon')"><div class="storeLogo">A</div><b>Amazon</b></div>
-   <div class="storeCard" onclick="quickSearch('Nike')"><div class="storeLogo">N</div><b>Nike</b></div>
-   <div class="storeCard" onclick="quickSearch('Noon')"><div class="storeLogo">noon</div><b>Noon</b></div>
-   <div class="storeCard" onclick="quickSearch('Booking')"><div class="storeLogo">B</div><b>Booking</b></div>
-   <div class="storeCard" onclick="quickSearch('iHerb')"><div class="storeLogo">iH</div><b>iHerb</b></div>
-   <div class="storeCard" onclick="quickSearch('Temu')"><div class="storeLogo">T</div><b>Temu</b></div>
-  </div>
- </section>
-
- <section class="section" id="how">
-  <div class="banner"><div><h2>هل لديك متجر أو كود تريد إضافته؟</h2><p>يمكن تحويل KODI إلى منصة كوبونات كاملة بقاعدة بيانات وإدارة أكواد وتحقق من الصلاحية.</p></div><button onclick="show('نموذج إضافة المتجر قادم في لوحة الإدارة')">أضف كودًا</button></div>
- </section>
+*{box-sizing:border-box}body{margin:0;background:#08080d;color:#f7f5ff;font-family:Inter,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif}button,input{font:inherit}button{cursor:pointer}
+:root{--violet:#8b5cf6;--cyan:#22d3ee;--panel:#111119;--line:#252532;--muted:#8e8b9c}
+.app{min-height:100vh;background:radial-gradient(circle at 80% 0,#3d1d7140,transparent 35%),radial-gradient(circle at 10% 40%,#07598525,transparent 30%),#08080d}
+.nav{height:68px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 22px;background:#09090eee;backdrop-filter:blur(20px);position:sticky;top:0;z-index:20}.brand{font-size:22px;font-weight:950;display:flex;gap:10px;align-items:center}.orb{width:34px;height:34px;border-radius:11px;background:linear-gradient(135deg,var(--violet),var(--cyan));box-shadow:0 0 30px #8b5cf677;display:grid;place-items:center}.nav span{color:var(--muted);font-size:12px}.pro{background:#fff;color:#111;border:0;border-radius:10px;padding:9px 14px;font-weight:900}
+.workspace{max-width:1400px;margin:auto;padding:22px;display:grid;grid-template-columns:240px 1fr 270px;gap:16px}.panel{background:#101018dd;border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 60px #0005;overflow:hidden}.side{padding:14px}.side h4{color:var(--muted);font-size:11px;margin:8px 8px 12px}.tool{width:100%;background:transparent;border:1px solid transparent;color:#e9e6f4;padding:12px;border-radius:11px;text-align:right;margin:3px 0}.tool:hover,.tool.active{background:#8b5cf615;border-color:#8b5cf633}.tool b{display:block}.tool small{color:var(--muted)}
+.stage{min-width:0}.toolbar{height:54px;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.toolbar button{background:#171720;color:#ddd;border:1px solid var(--line);border-radius:9px;padding:7px 11px}.toolbar .main{background:linear-gradient(135deg,var(--violet),#6d4cff);border:0;color:#fff;font-weight:900}
+.drop{min-height:470px;margin:14px;display:grid;place-items:center;border:1px dashed #514c62;border-radius:16px;background:radial-gradient(circle,#171522,#0c0c12);position:relative;overflow:hidden}.drop:before{content:"";position:absolute;width:320px;height:320px;border-radius:50%;background:linear-gradient(135deg,#8b5cf633,#22d3ee22);filter:blur(25px)}.empty{text-align:center;position:relative}.empty .cube{width:92px;height:92px;margin:auto;border-radius:24px;background:linear-gradient(135deg,#8b5cf6,#22d3ee);display:grid;place-items:center;font-size:42px;box-shadow:0 25px 70px #8b5cf655;transform:perspective(500px) rotateX(10deg) rotateY(-12deg);animation:float 3s ease-in-out infinite}@keyframes float{50%{transform:perspective(500px) rotateX(-5deg) rotateY(10deg) translateY(-8px)}}.empty h2{margin:18px 0 6px}.empty p{color:var(--muted);font-size:13px}.upload{background:#fff;color:#111;border:0;border-radius:11px;padding:12px 18px;font-weight:950;margin-top:7px}.hint{font-size:11px;color:#666475!important}
+video{display:none;width:100%;max-height:470px;object-fit:contain;background:#000}.videoWrap{margin:14px;border-radius:16px;overflow:hidden;background:#000;display:none}.videoWrap video{display:block}
+.timeline{margin:14px}.track{height:78px;background:#0b0b10;border:1px solid var(--line);border-radius:12px;position:relative;overflow:hidden}.clip{height:100%;background:linear-gradient(90deg,#38206b,#173e55);border:1px solid #8b5cf688;border-radius:9px;display:flex;align-items:center;padding:8px;gap:8px}.clip i{width:4px;height:45px;background:#fff;border-radius:4px;opacity:.4}.clip span{font-size:11px}.time{display:flex;justify-content:space-between;color:var(--muted);font-size:10px;margin-top:6px}
+.right{padding:15px}.right h3{font-size:14px;margin:4px 0 14px}.field{margin:12px 0}.field label{display:block;color:var(--muted);font-size:11px;margin-bottom:7px}.field input,.field select{width:100%;background:#0b0b10;border:1px solid var(--line);color:#fff;padding:10px;border-radius:9px;outline:none}.export{width:100%;margin-top:18px;background:linear-gradient(135deg,var(--violet),var(--cyan));border:0;color:#fff;border-radius:11px;padding:13px;font-weight:950;box-shadow:0 12px 35px #8b5cf633}
+.status{font-size:11px;color:var(--muted);padding:10px;border:1px solid var(--line);border-radius:10px;margin-top:12px}.status b{color:#7ee2b1}.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#fff;color:#111;padding:11px 16px;border-radius:10px;font-weight:800;display:none;z-index:99}
+@media(max-width:1000px){.workspace{grid-template-columns:190px 1fr}.right{display:none}}@media(max-width:650px){.workspace{display:block;padding:10px}.side{display:flex;overflow:auto;gap:5px}.side h4{display:none}.tool{min-width:105px}.drop{min-height:360px}.nav{padding:0 12px}}
+</style></head>
+<body><div class="app">
+<nav class="nav"><div class="brand"><span class="orb">✦</span>VEOX <span>STUDIO</span></div><span>AI Video Editor · 3D Workspace</span><button class="pro" onclick="toast('نظام الاشتراك سيتم ربطه بعد تجهيز Backend')">PRO</button></nav>
+<div class="workspace">
+<aside class="panel side"><h4>الأدوات</h4><button class="tool active" onclick="setTool(this)">✂️ <b>قص الفيديو</b><small>Trim & Split</small></button><button class="tool" onclick="setTool(this);toast('الترجمة التلقائية ستعمل مع محرك AI')">📝 <b>ترجمة AI</b><small>Auto Captions</small></button><button class="tool" onclick="setTool(this);toast('تحسين الصوت جاهز للربط بمحرك الصوت')">🔊 <b>تحسين الصوت</b><small>Audio Enhance</small></button><button class="tool" onclick="setTool(this)">🎨 <b>التأثيرات</b><small>Effects</small></button><button class="tool" onclick="setTool(this)">📐 <b>تغيير المقاس</b><small>9:16 · 1:1 · 16:9</small></button></aside>
+<main class="panel stage"><div class="toolbar"><div><button onclick="playPause()">▶ تشغيل</button> <button onclick="toast('تم تحديد نقطة القص')">✂ قص</button></div><button class="main" onclick="document.getElementById('file').click()">＋ إضافة فيديو</button></div>
+<div class="drop" id="drop"><div class="empty"><div class="cube">▶</div><h2>ابدأ مشروعك</h2><p>ارفع فيديو حقيقي وسنفتحه داخل المحرر</p><button class="upload" onclick="document.getElementById('file').click()">رفع فيديو</button><p class="hint">MP4 · WebM · MOV · المعالجة المحلية في المتصفح</p></div></div>
+<div class="videoWrap" id="videoWrap"><video id="video" controls></video></div>
+<div class="timeline"><div class="track" id="track"><div class="clip" id="clip"><i></i><span id="clipName">لم يتم رفع فيديو</span></div></div><div class="time"><span>00:00</span><span id="duration">00:00</span></div></div>
 </main>
-<footer class="footer">KODI · أكواد الخصم والعروض</footer>
-
-<div class="modal" id="modal" onclick="if(event.target===this)closeModal()"><div class="panel"><button class="close" onclick="closeModal()">×</button><h2 id="modalTitle"></h2><p id="modalDesc"></p><div class="bigCode" id="modalCode"></div><button class="full" onclick="copyCurrent()">نسخ الكود</button><p style="font-size:12px;margin-bottom:0">ملاحظة: بيانات الأكواد في هذه النسخة تجريبية حتى يتم ربط الموقع بمصدر أكواد موثوق أو لوحة إدارة.</p></div></div>
+<aside class="panel right"><h3>إعدادات المشروع</h3><div class="field"><label>المقاس</label><select id="ratio"><option>9:16 — TikTok / Reels</option><option>16:9 — YouTube</option><option>1:1 — Square</option></select></div><div class="field"><label>بداية القص (ثانية)</label><input id="start" type="number" min="0" value="0"></div><div class="field"><label>نهاية القص (ثانية)</label><input id="end" type="number" min="0" value="0"></div><button class="export" onclick="exportClip()">تصدير المقطع ✦</button><div class="status">الحالة: <b id="state">جاهز</b><br><span id="fileInfo">لم يتم رفع ملف</span></div></aside>
+</div></div>
+<input id="file" type="file" accept="video/*" hidden>
 <div class="toast" id="toast"></div>
-
 <script>
-const coupons=[
-{id:1,store:'Nike',cat:'fashion',discount:'25% خصم',desc:'كود تجريبي لعرض شكل بطاقة الكوبون.',code:'NIKE25',verified:true,expires:'تجريبي'},
-{id:2,store:'Amazon',cat:'tech',discount:'15% خصم',desc:'كود تجريبي لواجهة متجر إلكتروني.',code:'AMZ15',verified:true,expires:'تجريبي'},
-{id:3,store:'Noon',cat:'tech',discount:'20% خصم',desc:'كود تجريبي — استبدله بكود حقيقي من مصدر موثوق.',code:'NOON20',verified:false,expires:'تجريبي'},
-{id:4,store:'Booking',cat:'travel',discount:'10% خصم',desc:'كود تجريبي لعرض كوبونات السفر.',code:'BOOK10',verified:false,expires:'تجريبي'},
-{id:5,store:'iHerb',cat:'food',discount:'18% خصم',desc:'كود تجريبي لواجهة العروض.',code:'HERB18',verified:false,expires:'تجريبي'},
-{id:6,store:'Temu',cat:'fashion',discount:'30% خصم',desc:'كود تجريبي لواجهة كوبونات المتجر.',code:'TEMU30',verified:false,expires:'تجريبي'}
-];
-let shown=[...coupons], current=null;
-function render(list=shown){document.getElementById('count').textContent=list.length;document.getElementById('grid').innerHTML=list.length?list.map(c=>`<article class="coupon"><div class="top"><div class="store"><div class="logo">${c.store.slice(0,3)}</div><div><b>${c.store}</b><small>${c.cat}</small></div></div><span class="verified">${c.verified?'✓ مُعلّم تجريبي':'○ غير متحقق'}</span></div><div class="deal">${c.discount}</div><div class="desc">${c.desc}</div><div class="codeBox"><div class="code">${c.code}</div><button class="copy" onclick="openCoupon(${c.id})">نسخ</button></div><div class="meta"><span>ينتهي: ${c.expires}</span><span>عرض تجريبي</span></div></article>`).join(''):'<p class="muted">لا توجد نتائج.</p>'}
-function filter(cat,el){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));el.classList.add('active');shown=cat==='all'?[...coupons]:coupons.filter(x=>x.cat===cat);render(shown)}
-function doSearch(){const q=document.getElementById('search').value.trim().toLowerCase();shown=q?coupons.filter(c=>(c.store+' '+c.code+' '+c.discount+' '+c.desc).toLowerCase().includes(q)):coupons;render(shown);scrollToCoupons();show(q?'تم العثور على '+shown.length+' نتيجة':'عرض كل الأكواد')}
-function quickSearch(q){document.getElementById('search').value=q;doSearch()}
-function scrollToCoupons(){document.getElementById('coupons').scrollIntoView({behavior:'smooth'})}
-function openCoupon(id){current=coupons.find(x=>x.id===id);document.getElementById('modalTitle').textContent=current.store+' — '+current.discount;document.getElementById('modalDesc').textContent=current.desc;document.getElementById('modalCode').textContent=current.code;document.getElementById('modal').style.display='flex'}
-async function copyCurrent(){if(!current)return;try{await navigator.clipboard.writeText(current.code);show('تم نسخ الكود: '+current.code)}catch(e){show('الكود: '+current.code)}closeModal()}
-function closeModal(){document.getElementById('modal').style.display='none'}
-function show(t){const e=document.getElementById('toast');e.textContent=t;e.style.display='block';clearTimeout(window.x);window.x=setTimeout(()=>e.style.display='none',2400)}
-render();
-/* 3D pointer + touch interaction */
-const card3d=document.getElementById('coupon3d');
-const stage=document.getElementById('hero3d');
-function tilt(x,y){const r=stage.getBoundingClientRect();const px=(x-r.left)/r.width-.5,py=(y-r.top)/r.height-.5;card3d.style.transform=`rotateX(${-py*14}deg) rotateY(${px*18}deg) translateZ(18px)`;}
-stage.addEventListener('pointermove',e=>tilt(e.clientX,e.clientY));
-stage.addEventListener('pointerleave',()=>card3d.style.transform='rotateX(0) rotateY(0) translateZ(0)');
-stage.addEventListener('pointerdown',e=>tilt(e.clientX,e.clientY));
-</script>
-</body>
-</html>
+let video=document.getElementById('video'),fileUrl=null;
+const fileInput=document.getElementById('file');
+fileInput.onchange=()=>{const f=fileInput.files[0];if(!f)return;if(fileUrl)URL.revokeObjectURL(fileUrl);fileUrl=URL.createObjectURL(f);video.src=fileUrl;document.getElementById('drop').style.display='none';document.getElementById('videoWrap').style.display='block';document.getElementById('clipName').textContent=f.name;document.getElementById('fileInfo').textContent=(f.size/1024/1024).toFixed(1)+' MB · '+f.type;video.onloadedmetadata=()=>{document.getElementById('duration').textContent=fmt(video.duration);document.getElementById('end').value=Math.floor(video.duration*100)/100;};toast('تم تحميل الفيديو الحقيقي');};
+function fmt(s){return isFinite(s)?Math.floor(s/60).toString().padStart(2,'0')+':'+Math.floor(s%60).toString().padStart(2,'0'):'00:00'}
+function playPause(){if(!video.src)return toast('ارفع فيديو أولًا');video.paused?video.play():video.pause()}
+function setTool(el){document.querySelectorAll('.tool').forEach(x=>x.classList.remove('active'));el.classList.add('active')}
+function exportClip(){if(!video.src)return toast('ارفع فيديو أولًا');const s=Math.max(0,+document.getElementById('start').value||0),e=Math.min(video.duration,+document.getElementById('end').value||video.duration);if(e<=s)return toast('تأكد من وقت البداية والنهاية');video.currentTime=s;video.play();document.getElementById('state').textContent='معاينة القص';const stop=()=>{if(video.currentTime>=e){video.pause();video.removeEventListener('timeupdate',stop);document.getElementById('state').textContent='تم تحديد المقطع';toast('تم قص المقطع للمعاينة. التصدير النهائي يحتاج محرك FFmpeg في الخادم.')}};video.addEventListener('timeupdate',stop)}
+function toast(t){const e=document.getElementById('toast');e.textContent=t;e.style.display='block';clearTimeout(window.tt);window.tt=setTimeout(()=>e.style.display='none',2600)}
+</script></body></html>
